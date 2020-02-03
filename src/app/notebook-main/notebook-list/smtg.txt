@@ -1,0 +1,86 @@
+<div class="d-inline-block" *ngFor="let pm of service.list |
+                                    filter: { NotebookManufacture: ''} : service.checked() : false | 
+                                    filter: { NotebookScreenDiagonal: ''} : service.checkedDiag() : false | 
+                                    paginate: { itemsPerPage: 9, currentPage: p }">
+    <div class="something-inside">
+        <p><img class="img-responsive" src="assets/images/{{pm.NotebookSeries}}.jpg"></p>
+        <p>{{pm.NotebookManufacture}} {{pm.NotebookName}} {{pm.NotebookSeries}}</p>
+        <p>{{pm.NotebookPrice}}</p>
+    </div>
+    <div class="something-inside-but-hidden">
+        something-inside-but-hidden
+    </div>
+</div>
+<pagination-controls class = "pagin" (pageChange)="p = $event"></pagination-controls>
+
+
+
+<div class="body">
+    <mat-card class="example-card" *ngFor="let pm of service.list">
+        <div class = "content">
+                <div class="something-inside">
+                        <p><img class="img-responsive" src="assets/images/{{pm.NotebookSeries}}.jpg"></p>
+                        <p>{{pm.NotebookManufacture}} {{pm.NotebookName}} {{pm.NotebookSeries}}</p>
+                        <p>{{pm.NotebookPrice}}</p>
+                    </div>
+                    <div class="something-inside-but-hidden">
+                        something-inside-but-hidden
+                    </div>
+    </div>
+    </mat-card>
+</div>
+
+
+<div class="flex-container" >
+    <div class="column" *ngFor="let pm of service.list">
+        <div class="something-inside">
+            <div class="image-height"><img class="img-responsive" src="assets/images/{{pm.NotebookSeries}}.jpg"></div>
+            <p>{{pm.NotebookManufacture}} {{pm.NotebookName}} {{pm.NotebookSeries}}</p>
+            <p>{{pm.NotebookPrice}}</p>
+        </div>
+        <div class="something-inside-but-hidden">
+            something-inside-but-hidden
+        </div>
+    </div>
+</div>
+
+
+
+.d-inline-block {
+    width: 30%;
+}
+img{
+    padding: 18px;
+    width: 100%;
+    height: 60%;
+}
+
+
+.something-inside-but-hidden {
+    display:none
+}
+.d-inline-block:hover .something-inside-but-hidden {
+    display:block
+}
+
+.body{
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.column{
+    border-style: ridge;
+    flex: 30%;
+  max-width: 30%;
+  padding: 0 4px;
+  margin: 10px;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+  }
+

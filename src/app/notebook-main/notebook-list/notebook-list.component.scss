@@ -1,0 +1,125 @@
+
+img{
+    padding: 18px;
+    width: 100%;
+    top: 50%;
+}
+
+.products {
+    display:block;
+    width:100%;
+    height:100%;
+    position:relative;
+    margin:0px;
+    padding:0px;
+    font-size:0px;
+    list-style:none;
+}
+
+.products li {
+    display:inline-block;
+    width:33%;
+    height:373px;
+    position:relative;
+    margin:0px;
+    padding:0px;
+    z-index:1;
+}
+
+.products li:hover {
+    z-index:2;
+}
+
+.products li a {
+    display:block;
+    width:100%;
+    height:auto;
+    padding:10px;
+    position:absolute;
+    background-color:white;
+    
+}
+
+.products li:hover a {
+    box-shadow:0px 0px 5px rgba(0,0,0,0.5);
+    -moz-box-shadow:0px 0px 5px rgba(0,0,0,0.5);
+    -webkit-box-shadow:0px 0px 5px rgba(0,0,0,0.5);
+    -o-box-shadow:0px 0px 5px rgba(0,0,0,0.5);
+    -ms-box-shadow:0px 0px 5px rgba(0,0,0,0.5);
+}
+
+.products li a .image {
+    display:block;
+    position:relative;
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-size:contain;
+    border-style: ridge;
+    min-height: 270px;
+    
+}
+
+.products li a h1 {
+    display:block;
+    height:auto;
+    margin:10px 0px;
+    font-family:arial;
+    font-size:15px;
+    font-weight:bold;
+}
+
+.products li a .withcart {
+    position:relative
+}
+
+.products li a .withcart h2 {
+    display:block;
+    height:auto;
+    margin:3px 0px;
+    font-family:arial;
+    font-size:20px;
+    font-weight:normal;
+    color:red;
+}
+
+.products li a .withcart i{
+    float: right;
+    color:green;
+    cursor:pointer;
+}
+
+.products li a .withcart i :hover{
+    float: right;
+    color:blue;
+    border-style: ridge;
+    cursor:pointer;
+}
+
+.products li a h3 {
+    display:block;
+    height:auto;
+    margin:3px 0px;
+    font-family:arial;
+    font-size:13px;
+    font-weight:normal;
+    color:green;
+}
+
+
+.products li a .informations {
+    display:none;
+}
+
+.products li a .informations p{
+    display:block;
+    height:auto;
+    margin:10px 0px;
+    font-family:arial;
+    font-size:13px;
+    color:grey;
+    font-weight:normal;
+}
+
+.products li:hover a .informations {
+    display:block;
+}

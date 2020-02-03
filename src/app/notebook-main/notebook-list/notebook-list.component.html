@@ -1,0 +1,18 @@
+<ul class="products" >
+    <li *ngFor="let pm of service.list |
+                filter: { NotebookManufacture: ''} : service.checked() : false | 
+                filter: { NotebookScreenDiagonal: ''} : service.checkedDiag() : false | 
+                paginate: { itemsPerPage: 9, currentPage: p }">
+        <a>
+            <div class="image"><img class="img-responsive" src="assets/images/{{pm.NotebookSeries}}.jpg"></div>
+            <h1>{{pm.NotebookManufacture}} {{pm.NotebookName}} {{pm.NotebookSeries}}</h1>
+            <div class="withcart"><h2>{{pm.NotebookPrice}} ₴<i class="fa fa-shopping-cart"></i></h2></div>
+            <h3>Available</h3>
+            <div class="informations">
+                <p>Экран {{pm.NotebookScreenDiagonal}}" ({{pm.NotebookScreenResolution}}) Full HD / {{pm.NotebookProcessor}} / RAM {{pm.NotebookRAM}} ГБ / {{pm.NotebookStorage}} / 
+                    {{pm.NotebookVideoCard}} / без ОД / LAN / Wi-Fi / Bluetooth / без ОС / {{pm.NotebookWeight}} кг</p>
+            </div>
+        </a>
+    </li>
+</ul>
+<pagination-controls class = "pagin" (pageChange)="p = $event"></pagination-controls>

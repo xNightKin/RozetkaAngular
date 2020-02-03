@@ -1,0 +1,23 @@
+<div class="container">
+    <h3>Manufactures</h3>
+    <div *ngFor="let pm of service.filterManuf" class="form-check">
+        <label class="form-check">
+            <input type="checkbox" class="form-check-input" [(ngModel)]="pm.checked" [value]="pm.value"> {{ pm.value }}
+        </label>
+    </div>
+</div>
+<div class="container">
+    <h3>Screen resolution</h3>
+    <div *ngFor="let pm of service.filterDiag" class="form-check">
+        <label class="form-check">
+            <input type="checkbox" class="form-check-input" [(ngModel)]="pm.checked" [value]="pm.value"> {{ pm.value }}"
+        </label>
+    </div>
+</div>
+<div class="container">
+    <h3>Price:</h3> 
+    {{service.rangeValues[0] + ' - ' + service.rangeValues[1]}}<br><br>
+    <p-slider [(ngModel)]="service.rangeValues" (click)="service.handleChange()" [min]="5000" [max]="63000" [style]="{'width':'14em'}" [range]="true"></p-slider>
+</div>
+
+
